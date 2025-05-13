@@ -3,10 +3,12 @@ import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import { authRoutes } from './routes/auth.route.js'
-import { connectDB } from './lib/db.js'
-import { messageRoutes } from './routes/message.route.js'
 import { app, server } from './lib/socket.js'
+import { connectDB } from './lib/db.js'
+
+import { authRoutes } from './routes/auth.route.js'
+import { messageRoutes } from './routes/message.route.js'
+
 import path from 'path'
 
 dotenv.config()
