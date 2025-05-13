@@ -11,6 +11,6 @@ messageRoutes.get("/:id", protectRoute, getMessages)
 const storage = multer.memoryStorage()
 const upload = multer({storage: storage})
 
-messageRoutes.post("/send/:id", [protectRoute, upload.single('image')], sendMessage)
+messageRoutes.post("/send/:id", protectRoute, upload.single('image'), sendMessage)
 
 export {messageRoutes}

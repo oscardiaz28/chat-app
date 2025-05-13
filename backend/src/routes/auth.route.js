@@ -15,6 +15,6 @@ authRoutes.post("/logout", logout)
 const storage = multer.memoryStorage()
 const upload = multer({storage})
 
-authRoutes.put("/update-profile", [protectRoute, upload.single('profile')], updateProfile)
+authRoutes.put("/update-profile", protectRoute, upload.single('profile'), updateProfile)
 
 authRoutes.get("/check", protectRoute, checkAuth)

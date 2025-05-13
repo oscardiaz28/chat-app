@@ -19,9 +19,10 @@ export const getUsersForSidebar = async (req, res) => {
 }
 
 export const getMessages = async (req, res) => {
-    const myId = req.user._id
-    const {id: userToChatId} = req.params
     try{
+        const myId = req.user._id
+        const {id: userToChatId} = req.params
+
         const messages = await Message.find({
             $or: [
                 {senderId: myId, receiverId: userToChatId},
