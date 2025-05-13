@@ -14,7 +14,9 @@ export const ChatContainer = () => {
     const messageEndRef = useRef(null)
 
     useEffect(() => {
-        getMessages(selectedUser._id)
+        if(selectedUser){
+            getMessages(selectedUser._id)
+        }
         subcribeToMessages()
 
         return () => {
